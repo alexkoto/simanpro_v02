@@ -9,14 +9,14 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final double height; // Added height parameter
 
   const CustomAppBar({
-    Key? key,
+    super.key,
     required this.title,
     this.backgroundColor = Colors.blue,
     this.centerTitle = true,
     this.actions,
     this.leading,
     this.height = 48.0, // Default to 48.0 (smaller than standard 56.0)
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

@@ -3,7 +3,7 @@ import 'package:intl/intl.dart';
 import 'package:simanpro_v02/components/custom_appbar.dart';
 
 class PenggunaanMaterialScreen extends StatefulWidget {
-  const PenggunaanMaterialScreen({Key? key}) : super(key: key);
+  const PenggunaanMaterialScreen({super.key});
 
   @override
   State<PenggunaanMaterialScreen> createState() =>
@@ -334,7 +334,7 @@ class _PenggunaanMaterialScreenState extends State<PenggunaanMaterialScreen> {
                           scrollDirection: Axis.horizontal,
                           child: DataTable(
                             columnSpacing: 24,
-                            headingRowColor: MaterialStateProperty.all(
+                            headingRowColor: WidgetStateProperty.all(
                               Colors.brown.shade50,
                             ),
                             columns: const [
@@ -357,8 +357,8 @@ class _PenggunaanMaterialScreenState extends State<PenggunaanMaterialScreen> {
                               final item = filteredData[index];
                               return DataRow(
                                 color:
-                                    MaterialStateProperty.resolveWith<Color?>((
-                                      Set<MaterialState> states,
+                                    WidgetStateProperty.resolveWith<Color?>((
+                                      Set<WidgetState> states,
                                     ) {
                                       if (index.isEven) {
                                         return Colors.grey.shade50;
@@ -443,8 +443,8 @@ class _PenggunaanMaterialScreenState extends State<PenggunaanMaterialScreen> {
         onPressed: () {
           // TODO: Implement add material usage
         },
-        child: const Icon(Icons.add),
         tooltip: 'Tambah Penggunaan Material',
+        child: const Icon(Icons.add),
       ),
     );
   }

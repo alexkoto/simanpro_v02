@@ -260,8 +260,8 @@ class _TimelineSchedulingScreenState extends State<TimelineSchedulingScreen> {
         onPressed: () {
           _showAddTimelineDialog(context);
         },
-        child: const Icon(Icons.add),
         tooltip: 'Tambah Timeline',
+        child: const Icon(Icons.add),
       ),
     );
   }

@@ -123,7 +123,7 @@ class _RingkasanProyekScreenState extends State<RingkasanProyekScreen> {
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 10),
-            ...proyek.tahapan.map((tahap) => _buildPhaseCard(tahap)).toList(),
+            ...proyek.tahapan.map((tahap) => _buildPhaseCard(tahap)),
             const SizedBox(height: 20),
 
             // Team members
@@ -139,8 +139,8 @@ class _RingkasanProyekScreenState extends State<RingkasanProyekScreen> {
         onPressed: () {
           _showAddReportDialog();
         },
-        child: const Icon(Icons.add),
         tooltip: 'Tambah Laporan',
+        child: const Icon(Icons.add),
       ),
     );
   }

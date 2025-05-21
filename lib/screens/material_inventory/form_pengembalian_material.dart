@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 class FormPengembalianMaterial extends StatefulWidget {
-  const FormPengembalianMaterial({Key? key}) : super(key: key);
+  const FormPengembalianMaterial({super.key});
 
   @override
   _FormPengembalianMaterialState createState() =>

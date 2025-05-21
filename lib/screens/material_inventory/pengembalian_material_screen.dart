@@ -4,7 +4,7 @@ import 'package:simanpro_v02/components/custom_appbar.dart';
 import 'package:simanpro_v02/screens/material_inventory/form_pengembalian_material.dart';
 
 class PengembalianMaterialScreen extends StatefulWidget {
-  const PengembalianMaterialScreen({Key? key}) : super(key: key);
+  const PengembalianMaterialScreen({super.key});
 
   @override
   State<PengembalianMaterialScreen> createState() =>
@@ -489,7 +489,7 @@ class _PengembalianMaterialScreenState
                     scrollDirection: Axis.horizontal,
                     child: DataTable(
                       columnSpacing: 24,
-                      headingRowColor: MaterialStateProperty.all(
+                      headingRowColor: WidgetStateProperty.all(
                         Colors.blue.shade100,
                       ),
                       columns: const [
@@ -547,8 +547,8 @@ class _PengembalianMaterialScreenState
                       ) {
                         final item = filteredData[index];
                         return DataRow(
-                          color: MaterialStateProperty.resolveWith<Color?>((
-                            Set<MaterialState> states,
+                          color: WidgetStateProperty.resolveWith<Color?>((
+                            Set<WidgetState> states,
                           ) {
                             if (index.isEven) {
                               return Colors.grey.shade50;
@@ -645,8 +645,8 @@ class _PengembalianMaterialScreenState
           );
         },
         backgroundColor: Colors.blue,
-        child: const Icon(Icons.add),
         tooltip: 'Tambah Pengembalian',
+        child: const Icon(Icons.add),
       ),
     );
   }

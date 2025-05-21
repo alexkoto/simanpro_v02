@@ -3,7 +3,7 @@ import 'package:intl/intl.dart';
 import 'package:simanpro_v02/components/custom_appbar.dart';
 
 class StockManagementScreen extends StatefulWidget {
-  const StockManagementScreen({Key? key}) : super(key: key);
+  const StockManagementScreen({super.key});
 
   @override
   State<StockManagementScreen> createState() => _StockManagementScreenState();
@@ -294,7 +294,7 @@ class _StockManagementScreenState extends State<StockManagementScreen> {
                             scrollDirection: Axis.horizontal,
                             child: DataTable(
                               columnSpacing: 24,
-                              headingRowColor: MaterialStateProperty.all(
+                              headingRowColor: WidgetStateProperty.all(
                                 Colors.deepPurple.shade50,
                               ),
                               columns: const [
@@ -324,8 +324,8 @@ class _StockManagementScreenState extends State<StockManagementScreen> {
 
                                 return DataRow(
                                   color:
-                                      MaterialStateProperty.resolveWith<Color?>(
-                                        (Set<MaterialState> states) {
+                                      WidgetStateProperty.resolveWith<Color?>(
+                                        (Set<WidgetState> states) {
                                           if (index.isEven) {
                                             return Colors.grey.shade50;
                                           }
@@ -466,8 +466,8 @@ class _StockManagementScreenState extends State<StockManagementScreen> {
         onPressed: () {
           // TODO: Implement add project
         },
-        child: const Icon(Icons.add),
         tooltip: 'Tambah Proyek Baru',
+        child: const Icon(Icons.add),
       ),
     );
   }

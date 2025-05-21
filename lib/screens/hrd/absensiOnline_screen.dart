@@ -10,7 +10,7 @@ Future<void> _requestPermissions() async {
 }
 
 class AbsensiOnline extends StatefulWidget {
-  const AbsensiOnline({Key? key}) : super(key: key);
+  const AbsensiOnline({super.key});
 
   @override
   State<AbsensiOnline> createState() => _AbsensiOnlineState();

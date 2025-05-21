@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:simanpro_v02/components/custom_appbar.dart';
 
 class DaftarProyekScreen extends StatelessWidget {
-  const DaftarProyekScreen({Key? key}) : super(key: key);
+  const DaftarProyekScreen({super.key});
 
   // Contoh data proyek statis. Nantinya bisa diganti dengan data dari API atau database.
   final List<Map<String, String>> daftarProyek = const [

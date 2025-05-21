@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:simanpro_v02/components/custom_appbar.dart';
 
 class DocumentControlScreen extends StatelessWidget {
-  const DocumentControlScreen({Key? key}) : super(key: key);
+  const DocumentControlScreen({super.key});
 
   final Map<String, List<Map<String, String>>> _dokumenPerProyek = const {
     'Proyek Gedung Serbaguna A': [
@@ -143,7 +143,7 @@ class DocumentControlScreen extends StatelessWidget {
                         },
                       ),
                     );
-                  }).toList(),
+                  }),
                   const SizedBox(height: 24),
                 ],
               );

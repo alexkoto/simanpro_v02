@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:simanpro_v02/components/custom_appbar.dart';
 
 class PurchaseOrderScreen extends StatelessWidget {
-  const PurchaseOrderScreen({Key? key}) : super(key: key);
+  const PurchaseOrderScreen({super.key});
 
   final List<Map<String, String>> _poList = const [
     {'kode': 'PO-001', 'vendor': 'Toko Sinar Lestari', 'status': 'Diproses'},

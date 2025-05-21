@@ -1,6 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:simanpro_v02/screens/hrd/absensiOnline_screen.dart';
 import 'package:simanpro_v02/screens/dashbord/alert_system_screen.dart';
 import 'package:simanpro_v02/screens/dashbord/financial_overview_screen.dart';
+import 'package:simanpro_v02/screens/hrd/skill_matrix_screen.dart';
+import 'package:simanpro_v02/screens/hrd/timesheet_screen.dart';
+import 'package:simanpro_v02/screens/kendaraan/equipment_screen.dart';
+import 'package:simanpro_v02/screens/kendaraan/equipment_tracking_screen.dart';
+import 'package:simanpro_v02/screens/kendaraan/fuel_monitoring_screen.dart';
+import 'package:simanpro_v02/screens/kendaraan/maintenance_log_screen.dart';
 import 'package:simanpro_v02/screens/manajemenProyek/daftar_proyek_screen.dart';
 import 'package:simanpro_v02/screens/manajemenProyek/document_control_screen.dart';
 import 'package:simanpro_v02/screens/material_inventory/pengembalian_material_screen.dart';
@@ -9,6 +16,9 @@ import 'package:simanpro_v02/screens/material_inventory/purchase_order_screen.da
 import 'package:simanpro_v02/screens/dashbord/ringkasan_proyek_screen.dart';
 import 'package:simanpro_v02/screens/material_inventory/stock_management_screen.dart';
 import 'package:simanpro_v02/screens/manajemenProyek/timeline_scheduling_screen.dart';
+import 'package:simanpro_v02/screens/qcs/audit_qc_screen.dart';
+import 'package:simanpro_v02/screens/qcs/inspeksi_harian_screen.dart';
+import 'package:simanpro_v02/screens/qcs/laporan_insiden_screen.dart';
 
 import 'notification_screen.dart';
 import 'setting_screen.dart';
@@ -42,6 +52,15 @@ class _HomeScreenState extends State<HomeScreen> {
     {'title': 'Purchase Order', 'icon': Icons.shopping_bag_outlined},
     {'title': 'Penggunaan Material', 'icon': Icons.build},
     {'title': 'Pengembalian Material', 'icon': Icons.undo_outlined},
+  ];
+
+  final List<Map<String, dynamic>> _kendaraanItems = [
+    {'title': 'Equipment', 'icon': Icons.car_rental_sharp},
+    {'title': 'Equipment Tracking', 'icon': Icons.location_searching},
+    {'title': 'Maintenance Log', 'icon': Icons.build_circle},
+    {'title': 'Fuel Monitoring', 'icon': Icons.local_gas_station},
+    {'title': 'Peminjaman Kendaraan', 'icon': Icons.directions_car_filled},
+    {'title': 'Jatuh Tempo Pajak & Perizinan', 'icon': Icons.event_note},
   ];
 
   final List<Map<String, dynamic>> _hrItems = [
@@ -117,18 +136,31 @@ class _HomeScreenState extends State<HomeScreen> {
         return PenggunaanMaterialScreen();
       case 'Pengembalian Material':
         return PengembalianMaterialScreen();
+      case 'Equipment':
+        return EquipmentScreen();
+      case 'Equipment Tracking':
+        return EquipmentTrackingScreen();
+
+      case 'Maintenance Log':
+        return MaintenanceLogScreen();
+      case 'Fuel Monitoring':
+        return FuelMonitoringScreen();
+      case 'Peminjaman Kendaraan':
+        return PlaceholderScreen(title: title);
+      case 'Jatuh Tempo Pajak & Perizinan':
+        return PlaceholderScreen(title: title);
       case 'Absensi Online':
-        return PlaceholderScreen(title: title);
+        return AbsensiOnline();
       case 'Skill Matrix':
-        return PlaceholderScreen(title: title);
+        return SkillMatrixScreen();
       case 'Timesheet':
-        return PlaceholderScreen(title: title);
+        return TimesheetScreen();
       case 'Inspeksi Harian':
-        return PlaceholderScreen(title: title);
+        return InspeksiHarianScreen();
       case 'Laporan Insiden':
-        return PlaceholderScreen(title: title);
+        return LaporanInsidenScreen();
       case 'Audit QC':
-        return PlaceholderScreen(title: title);
+        return AuditQCScreen();
       case 'Progress Billing':
         return PlaceholderScreen(title: title);
       case 'Biaya Operasional':
@@ -147,12 +179,8 @@ class _HomeScreenState extends State<HomeScreen> {
         return PlaceholderScreen(title: title);
       case 'Signature Capture':
         return PlaceholderScreen(title: title);
-      case 'Alert System':
-        return PlaceholderScreen(title: title);
       case 'Timeline':
         return PlaceholderScreen(title: title);
-      case 'Stock Management':
-
       // Tambah sesuai kebutuhan...
       default:
         return PlaceholderScreen(title: title);
@@ -198,6 +226,7 @@ class _HomeScreenState extends State<HomeScreen> {
             _buildSectionCard('Dashboard & Analytics', _dashboardItems),
             _buildSectionCard('Manajemen Proyek', _projectManagementItems),
             _buildSectionCard('Material & Inventory', _materialItems),
+            _buildSectionCard('Alat Berat & Kendaraan', _kendaraanItems),
             _buildSectionCard('Tenaga Kerja (HRD & Lapangan)', _hrItems),
             _buildSectionCard('Quality Control & Safety', _qcItems),
             _buildSectionCard('Accounting & Finance', _accountingItems),
