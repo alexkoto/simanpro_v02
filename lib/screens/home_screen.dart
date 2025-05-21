@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:simanpro_v02/screens/accounting/biaya_operasional_screen.dart';
+import 'package:simanpro_v02/screens/accounting/progress_billing.dart';
 import 'package:simanpro_v02/screens/hrd/absensiOnline_screen.dart';
 import 'package:simanpro_v02/screens/dashbord/alert_system_screen.dart';
 import 'package:simanpro_v02/screens/dashbord/financial_overview_screen.dart';
@@ -7,7 +9,9 @@ import 'package:simanpro_v02/screens/hrd/timesheet_screen.dart';
 import 'package:simanpro_v02/screens/kendaraan/equipment_screen.dart';
 import 'package:simanpro_v02/screens/kendaraan/equipment_tracking_screen.dart';
 import 'package:simanpro_v02/screens/kendaraan/fuel_monitoring_screen.dart';
+import 'package:simanpro_v02/screens/kendaraan/jatuh_tempo_pajak_screen.dart';
 import 'package:simanpro_v02/screens/kendaraan/maintenance_log_screen.dart';
+import 'package:simanpro_v02/screens/kendaraan/peminjaman_kendaraan_screen.dart';
 import 'package:simanpro_v02/screens/manajemenProyek/daftar_proyek_screen.dart';
 import 'package:simanpro_v02/screens/manajemenProyek/document_control_screen.dart';
 import 'package:simanpro_v02/screens/material_inventory/pengembalian_material_screen.dart';
@@ -140,15 +144,14 @@ class _HomeScreenState extends State<HomeScreen> {
         return EquipmentScreen();
       case 'Equipment Tracking':
         return EquipmentTrackingScreen();
-
       case 'Maintenance Log':
         return MaintenanceLogScreen();
       case 'Fuel Monitoring':
         return FuelMonitoringScreen();
       case 'Peminjaman Kendaraan':
-        return PlaceholderScreen(title: title);
+        return PeminjamanKendaraanScreen();
       case 'Jatuh Tempo Pajak & Perizinan':
-        return PlaceholderScreen(title: title);
+        return PajakPerizinanScreen();
       case 'Absensi Online':
         return AbsensiOnline();
       case 'Skill Matrix':
@@ -162,9 +165,9 @@ class _HomeScreenState extends State<HomeScreen> {
       case 'Audit QC':
         return AuditQCScreen();
       case 'Progress Billing':
-        return PlaceholderScreen(title: title);
+        return ProgressBillingScreen();
       case 'Biaya Operasional':
-        return PlaceholderScreen(title: title);
+        return BiayaOperasionalScreen();
       case 'Invoice Management':
         return PlaceholderScreen(title: title);
       case 'Daily Report':
