@@ -46,7 +46,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   final List<Map<String, dynamic>> _dashboardItems = [
     {'title': 'Ringkasan Proyek', 'icon': Icons.dashboard_outlined},
-    {'title': 'Financial Overview', 'icon': Icons.bar_chart_outlined},
+    // {'title': 'Financial Overview', 'icon': Icons.bar_chart_outlined},
     {'title': 'Alert System', 'icon': Icons.notification_important_outlined},
   ];
 
@@ -373,7 +373,9 @@ class _HomeScreenState extends State<HomeScreen> {
       },
       borderRadius: BorderRadius.circular(8),
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisSize: MainAxisSize.min, // Tambahkan ini
         children: [
           Container(
             width: 48,

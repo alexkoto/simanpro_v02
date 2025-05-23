@@ -8,7 +8,9 @@ plugins {
 android {
     namespace = "com.example.simanpro_v02"
     compileSdk = flutter.compileSdkVersion
-    ndkVersion = flutter.ndkVersion
+//    ndkVersion = flutter.ndkVersion
+//    ndkVersion ="27.2.12479018"
+    ndkVersion = "29.0.13113456"
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11

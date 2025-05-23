@@ -11,36 +11,49 @@ class AlertSystemScreen extends StatefulWidget {
 class _AlertSystemScreenState extends State<AlertSystemScreen> {
   final List<AlertItem> _alerts = [
     AlertItem(
-      title: "Keterlambatan Proyek A",
-      message: "Tahap konstruksi terlambat 3 hari dari jadwal",
-      project: "Proyek A",
+      title: "Keterlambatan Instalasi Panel Surya",
+      message:
+          "Tahap instalasi panel surya pada proyek Pemasangan PJU Solar Cell mengalami keterlambatan 3 hari dari jadwal.",
+      project: "Pemasangan PJU Solar Cell",
       date: DateTime.now().subtract(const Duration(hours: 2)),
       priority: Priority.high,
       isRead: false,
     ),
     AlertItem(
-      title: "Material Habis",
-      message: "Stok semen tinggal 10 sak, perlu pengadaan segera",
-      project: "Proyek B",
+      title: "Material Kabel Habis",
+      message:
+          "Stok kabel pada proyek Perbaikan Jaringan Listrik Kampus tinggal sedikit, perlu pengadaan segera.",
+      project: "Perbaikan Jaringan Listrik Kampus",
       date: DateTime.now().subtract(const Duration(days: 1)),
       priority: Priority.medium,
       isRead: true,
     ),
     AlertItem(
       title: "Pembayaran Invoice",
-      message: "Invoice dari PT. Jaya Abadi belum dibayar (jatuh tempo 2 hari)",
-      project: "Semua Proyek",
+      message:
+          "Invoice dari PT. Jaya Abadi untuk proyek Instalasi Listrik Rumah Sakit Awal Bros belum dibayar (jatuh tempo 2 hari).",
+      project: "Instalasi Listrik Rumah Sakit Awal Bros",
       date: DateTime.now().subtract(const Duration(days: 3)),
       priority: Priority.high,
       isRead: false,
     ),
     AlertItem(
       title: "Laporan Bulanan",
-      message: "Laporan bulan Januari belum disubmit",
-      project: "Administrasi",
+      message:
+          "Laporan bulan Januari untuk proyek Rehabilitasi Gardu Listrik belum disubmit.",
+      project: "Rehabilitasi Gardu Listrik",
       date: DateTime.now().subtract(const Duration(days: 5)),
       priority: Priority.low,
       isRead: true,
+    ),
+    AlertItem(
+      title: "Cuaca Ekstrem Terdeteksi",
+      message:
+          "Cuaca ekstrem diperkirakan terjadi di lokasi proyek Pembangunan Listrik Pedesaan, penjadwalan ulang mungkin diperlukan.",
+      project: "Pembangunan Listrik Pedesaan",
+      date: DateTime.now().subtract(const Duration(hours: 5)),
+      priority: Priority.high,
+      isRead: false,
     ),
   ];
 
