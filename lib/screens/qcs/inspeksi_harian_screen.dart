@@ -141,8 +141,9 @@ class _InspeksiHarianScreenState extends State<InspeksiHarianScreen> {
                               )
                               .toList(),
                       onChanged: (val) {
-                        if (val != null)
+                        if (val != null) {
                           setModalState(() => potensiBahaya = val);
+                        }
                       },
                     ),
                     const SizedBox(height: 8),
@@ -159,8 +160,9 @@ class _InspeksiHarianScreenState extends State<InspeksiHarianScreen> {
                               )
                               .toList(),
                       onChanged: (val) {
-                        if (val != null)
+                        if (val != null) {
                           setModalState(() => workingPermit = val);
+                        }
                       },
                     ),
                     const SizedBox(height: 8),

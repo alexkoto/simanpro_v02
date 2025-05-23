@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:simanpro_v02/screens/Mobile%20Field%20Apps/photo_documentation_screen.dart';
 import 'package:simanpro_v02/screens/accounting/biaya_operasional_screen.dart';
+import 'package:simanpro_v02/screens/accounting/invoice_management_screen.dart';
 import 'package:simanpro_v02/screens/accounting/progress_billing.dart';
 import 'package:simanpro_v02/screens/hrd/absensiOnline_screen.dart';
 import 'package:simanpro_v02/screens/dashbord/alert_system_screen.dart';
@@ -12,6 +14,9 @@ import 'package:simanpro_v02/screens/kendaraan/fuel_monitoring_screen.dart';
 import 'package:simanpro_v02/screens/kendaraan/jatuh_tempo_pajak_screen.dart';
 import 'package:simanpro_v02/screens/kendaraan/maintenance_log_screen.dart';
 import 'package:simanpro_v02/screens/kendaraan/peminjaman_kendaraan_screen.dart';
+import 'package:simanpro_v02/screens/laporan/arsip_digital_screen.dart';
+import 'package:simanpro_v02/screens/laporan/daily_report_screen.dart';
+import 'package:simanpro_v02/screens/laporan/monthly_report_screen.dart';
 import 'package:simanpro_v02/screens/manajemenProyek/daftar_proyek_screen.dart';
 import 'package:simanpro_v02/screens/manajemenProyek/document_control_screen.dart';
 import 'package:simanpro_v02/screens/material_inventory/pengembalian_material_screen.dart';
@@ -169,15 +174,15 @@ class _HomeScreenState extends State<HomeScreen> {
       case 'Biaya Operasional':
         return BiayaOperasionalScreen();
       case 'Invoice Management':
-        return PlaceholderScreen(title: title);
+        return InvoiceManagementScreen();
       case 'Daily Report':
-        return PlaceholderScreen(title: title);
+        return DailyReportScreen();
       case 'Laporan Bulanan':
-        return PlaceholderScreen(title: title);
+        return MonthlyReportScreen();
       case 'Arsip Digital':
-        return PlaceholderScreen(title: title);
+        return ArsipDigitalScreen();
       case 'Photo Documentation':
-        return PlaceholderScreen(title: title);
+        return PhotoDocumentationScreen();
       case 'Offline Mode':
         return PlaceholderScreen(title: title);
       case 'Signature Capture':
@@ -234,7 +239,7 @@ class _HomeScreenState extends State<HomeScreen> {
             _buildSectionCard('Quality Control & Safety', _qcItems),
             _buildSectionCard('Accounting & Finance', _accountingItems),
             _buildSectionCard('Laporan & Dokumentasi', _reportItems),
-            _buildSectionCard('Mobile Field Apps', _fieldAppItems),
+            // _buildSectionCard('Mobile Field Apps', _fieldAppItems),
             const SizedBox(height: 30),
           ],
         ),

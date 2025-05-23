@@ -132,8 +132,9 @@ class _PeminjamanKendaraanScreenState extends State<PeminjamanKendaraanScreen> {
                               firstDate: DateTime(2020),
                               lastDate: DateTime(2100),
                             );
-                            if (picked != null)
+                            if (picked != null) {
                               setModalState(() => tanggalPakai = picked);
+                            }
                           },
                         ),
                       ],
@@ -152,8 +153,9 @@ class _PeminjamanKendaraanScreenState extends State<PeminjamanKendaraanScreen> {
                               firstDate: DateTime(2020),
                               lastDate: DateTime(2100),
                             );
-                            if (picked != null)
+                            if (picked != null) {
                               setModalState(() => tanggalKembali = picked);
+                            }
                           },
                         ),
                       ],
@@ -177,8 +179,9 @@ class _PeminjamanKendaraanScreenState extends State<PeminjamanKendaraanScreen> {
                         }),
                         _fotoButton('Foto Belakang', fotoBelakang, () async {
                           final img = await _pickImage();
-                          if (img != null)
+                          if (img != null) {
                             setModalState(() => fotoBelakang = img);
+                          }
                         }),
                       ],
                     ),

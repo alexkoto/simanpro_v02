@@ -117,8 +117,9 @@ class _MaintenanceLogScreenState extends State<MaintenanceLogScreen> {
 
   Color _getColorForDate(DateTime tgl) {
     if (tgl.isBefore(DateTime.now())) return Colors.red.shade100;
-    if (tgl.difference(DateTime.now()).inDays <= 2)
+    if (tgl.difference(DateTime.now()).inDays <= 2) {
       return Colors.orange.shade100;
+    }
     return Colors.green.shade100;
   }
 
