@@ -52,8 +52,8 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
         borderRadius:
             borderRadius ??
             BorderRadius.only(
-              bottomLeft: Radius.circular(10),
-              bottomRight: Radius.circular(10),
+              bottomLeft: Radius.circular(5),
+              bottomRight: Radius.circular(5),
             ),
       ),
       toolbarHeight: height,

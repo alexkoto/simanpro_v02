@@ -451,85 +451,7 @@ class _RingkasanProyekScreenState extends State<RingkasanProyekScreen> {
     );
   }
 
-  // Widget _buildTeamSection() {
-  //   return Column(
-  //     crossAxisAlignment: CrossAxisAlignment.start,
-  //     children: [
-  //       const Text(
-  //         'Tim Proyek',
-  //         style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-  //       ),
-  //       const SizedBox(height: 10),
-  //       LayoutBuilder(
-  //         builder: (context, constraints) {
-  //           final cardWidth =
-  //               constraints.maxWidth * 0.4; // 40% dari lebar layar
-  //           return SizedBox(
-  //             height: 120, // Tinggi yang cukup untuk menampilkan informasi
-  //             child: ListView.builder(
-  //               scrollDirection: Axis.horizontal,
-  //               itemCount: 5, // Jumlah anggota tim
-  //               itemBuilder: (context, index) {
-  //                 final teamMembers = [
-  //                   {'name': 'Saipul Anwar', 'role': 'Manajer Proyek'},
-  //                   {'name': 'Andi Setiawan', 'role': 'Site Engineer'},
-  //                   {'name': 'Dewi Lestari', 'role': 'Perencana Listrik'},
-  //                   {'name': 'Rizky Maulana', 'role': 'Quantity Surveyor'},
-  //                   {'name': 'Budi Hartono', 'role': 'Pengawas Lapangan'},
-  //                 ];
-  //                 if (index >= teamMembers.length) return const SizedBox();
-  //                 // Menghindari index out of range
-  //                 return Container(
-  //                   width: cardWidth,
-  //                   margin: const EdgeInsets.only(right: 12),
-  //                   child: Card(
-  //                     elevation: 2,
-  //                     shape: RoundedRectangleBorder(
-  //                       borderRadius: BorderRadius.circular(10),
-  //                     ),
-  //                     child: Padding(
-  //                       padding: const EdgeInsets.all(8),
-  //                       child: Column(
-  //                         mainAxisAlignment: MainAxisAlignment.center,
-  //                         children: [
-  //                           const CircleAvatar(
-  //                             radius: 20,
-  //                             child: Icon(Icons.person, size: 20),
-  //                           ),
-  //                           const SizedBox(height: 8),
-  //                           Text(
-  //                             teamMembers[index]['name']!,
-  //                             style: const TextStyle(
-  //                               fontSize: 12,
-  //                               fontWeight: FontWeight.bold,
-  //                             ),
-  //                             textAlign: TextAlign.center,
-  //                             maxLines: 1,
-  //                             overflow: TextOverflow.ellipsis,
-  //                           ),
-  //                           Text(
-  //                             teamMembers[index]['role']!,
-  //                             style: TextStyle(
-  //                               fontSize: 10,
-  //                               color: Colors.grey[600],
-  //                             ),
-  //                             textAlign: TextAlign.center,
-  //                             maxLines: 1,
-  //                             overflow: TextOverflow.ellipsis,
-  //                           ),
-  //                         ],
-  //                       ),
-  //                     ),
-  //                   ),
-  //                 );
-  //               },
-  //             ),
-  //           );
-  //         },
-  //       ),
-  //     ],
-  //   );
-  // }
+ 
 
   Widget _buildTeamSection(Proyek proyek) {
     return Column(
@@ -594,50 +516,7 @@ class _RingkasanProyekScreenState extends State<RingkasanProyekScreen> {
     );
   }
 
-  // Widget _buildRecentActivities() {
-  //   return Column(
-  //     crossAxisAlignment: CrossAxisAlignment.start,
-  //     children: [
-  //       const Text(
-  //         'Aktivitas Terkini',
-  //         style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-  //       ),
-  //       const SizedBox(height: 10),
-  //       Card(
-  //         child: Padding(
-  //           padding: const EdgeInsets.all(12),
-  //           child: Column(
-  //             children: [
-  //               _buildActivityItem(
-  //                 'Pemasangan trafo distribusi selesai',
-  //                 'Hari ini, 10:30',
-  //                 Icons.electrical_services,
-  //               ),
-  //               const Divider(),
-  //               _buildActivityItem(
-  //                 'Material kabel TR dan SR tiba di lokasi',
-  //                 'Kemarin, 14:15',
-  //                 Icons.local_shipping,
-  //               ),
-  //               const Divider(),
-  //               _buildActivityItem(
-  //                 'Pemeriksaan grounding system',
-  //                 '2 hari lalu',
-  //                 Icons.bolt,
-  //               ),
-  //               const Divider(),
-  //               _buildActivityItem(
-  //                 'Koordinasi pekerjaan jaringan dengan PLN',
-  //                 '3 hari lalu',
-  //                 Icons.group,
-  //               ),
-  //             ],
-  //           ),
-  //         ),
-  //       ),
-  //     ],
-  //   );
-  // }
+ 
 
   Widget _buildRecentActivities(Proyek proyek) {
     final dateFormat = DateFormat('dd MMM yyyy, HH:mm');

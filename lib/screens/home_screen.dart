@@ -45,8 +45,8 @@ class _HomeScreenState extends State<HomeScreen> {
   int _selectedIndex = 0;
 
   final List<Map<String, dynamic>> _dashboardItems = [
-    {'title': 'Ringkasan Proyek', 'icon': Icons.dashboard_outlined},
-    // {'title': 'Financial Overview', 'icon': Icons.bar_chart_outlined},
+    {'title': 'Ringkasan Proyek', 'icon': Icons.bar_chart_outlined},
+    {'title': 'Financial Overview', 'icon': Icons.bar_chart_outlined},
     {'title': 'Alert System', 'icon': Icons.notification_important_outlined},
   ];
 

@@ -60,21 +60,26 @@ class _AlertSystemScreenState extends State<AlertSystemScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      //
       appBar: AppBar(
         title: const Text(
           'Sistem Alert',
           style: TextStyle(
-            fontSize: 18, // Slightly smaller font
-            fontWeight: FontWeight.w500,
+            fontSize: 18,
+            // fontStyle: FontStyle.normal,
+            fontWeight: FontWeight.w800,
+            color: Colors.white,
+            letterSpacing: 0.5,
           ),
         ),
         backgroundColor: Colors.blue,
-        centerTitle: true,
+        foregroundColor: Colors.white, // Menambahkan warna tulisan putih
 
+        centerTitle: true,
         shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.only(
-            bottomLeft: Radius.circular(20),
-            bottomRight: Radius.circular(20),
+            bottomLeft: Radius.circular(5),
+            bottomRight: Radius.circular(5),
           ),
         ),
         toolbarHeight: 48.0,
@@ -93,44 +98,44 @@ class _AlertSystemScreenState extends State<AlertSystemScreen> {
           onPressed: () => Navigator.pop(context),
         ),
       ),
-      body: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Row(
-              children: [
-                Expanded(
-                  child: TextField(
-                    decoration: InputDecoration(
-                      hintText: 'Cari alert...',
-                      prefixIcon: const Icon(Icons.search),
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                    ),
-                    onChanged: (value) {
-                      // Implement search functionality
-                    },
-                  ),
-                ),
-              ],
-            ),
-          ),
-          Expanded(
-            child: ListView.builder(
-              itemCount: _alerts.length,
-              itemBuilder: (context, index) {
-                final alert = _alerts[index];
-                return _buildAlertCard(alert);
-              },
-            ),
-          ),
-        ],
-      ),
+      body: _buildAlertList(),
       floatingActionButton: FloatingActionButton(
         onPressed: _addNewAlert,
         child: const Icon(Icons.add_alert),
       ),
+    );
+  }
+
+  Widget _buildAlertList() {
+    // Group alerts by project
+    final groupedAlerts = <String, List<AlertItem>>{};
+    for (var alert in _alerts) {
+      groupedAlerts.putIfAbsent(alert.project, () => []).add(alert);
+    }
+
+    return ListView.builder(
+      itemCount: groupedAlerts.keys.length,
+      itemBuilder: (context, index) {
+        final project = groupedAlerts.keys.elementAt(index);
+        final alerts = groupedAlerts[project]!;
+
+        return Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+              child: Text(
+                project,
+                style: const TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+            ...alerts.map((alert) => _buildAlertCard(alert)).toList(),
+          ],
+        );
+      },
     );
   }
 
@@ -237,7 +242,6 @@ class _AlertSystemScreenState extends State<AlertSystemScreen> {
             ),
             TextButton(
               onPressed: () {
-                // Implement action for this alert
                 Navigator.pop(context);
                 ScaffoldMessenger.of(context).showSnackBar(
                   SnackBar(content: Text('Tindakan untuk ${alert.title}')),
